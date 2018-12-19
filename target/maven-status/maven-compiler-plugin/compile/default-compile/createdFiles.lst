@@ -1,0 +1,6 @@
+com/codiecon/codiecon/controller/SignUpController.class
+com/codiecon/codiecon/models/entity/UserLogin.class
+com/codiecon/codiecon/CodieconApplication.class
+com/codiecon/codiecon/service/SignUpService.class
+com/codiecon/codiecon/models/Model.class
+com/codiecon/codiecon/repository/VehicleDetails.class
