@@ -1,10 +1,12 @@
 package com.codiecon.codiecon.service;
 
+import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
+
 public interface SignUpService {
 
   public void driverSignUp();
 
-  public void vehicleOwnerSignUp();
+  public void vehicleOwnerSignUp(OwnerDetailsRequest ownerDetailsRequest);
 
   public void bookVehicle();
 

@@ -58,11 +58,14 @@ public class OwnerDetails {
   @Column(nullable = false)
   private ApplicationStatus status;
 
+  private Long otp;
+
   @OneToOne(mappedBy = OWNER)
   private PaymentDetails paymentDetails;
 
   @OneToMany(mappedBy = OWNER)
   private VehicleDetails vehicleDetails;
+
 
   @Override
   public boolean equals(Object o) {
