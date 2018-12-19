@@ -31,7 +31,6 @@ public class SignUpServiceImpl implements SignUpService {
   @Override
   public void vehicleOwnerSignUp(OwnerDetailsRequest ownerDetailsRequest) {
     OwnerDetails ownerDetails = new OwnerDetails();
-//    ownerDetails.setId(String.valueOf(UUID.randomUUID()));
     ownerDetails.setEmail(ownerDetailsRequest.getEmail());
     ownerDetails.setName(ownerDetailsRequest.getName());
     ownerDetails.setContactNumber(ownerDetailsRequest.getContactNumber());
@@ -41,8 +40,6 @@ public class SignUpServiceImpl implements SignUpService {
         .nextInt(MIN_OTP_RANGE, MAX_OTP_RANGE + 1)));
     ownerDetails.setStatus(ApplicationStatus.OTP_PENDING);
     ownerDetailsRepository.save(ownerDetails);
-
-
     //todo :: send otp in email or phone
   }
 

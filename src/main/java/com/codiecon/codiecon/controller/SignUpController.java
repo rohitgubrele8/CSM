@@ -25,6 +25,9 @@ public class SignUpController {
   @Autowired
   private SignUpService signUpService;
 
+
+
+
   @RequestMapping(value = "/vehicleOwner", method = RequestMethod.POST, consumes = MediaType
       .APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
   public BaseResponse saveVehicleOwnerDetails(
@@ -39,5 +42,6 @@ public class SignUpController {
     signUpService.vehicleOwnerOtpValidation(otpRequest);
     return new BaseResponse(true, HttpStatus.OK.value());
   }
+
 
 }
