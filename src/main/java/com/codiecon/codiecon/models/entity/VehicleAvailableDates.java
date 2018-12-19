@@ -1,6 +1,8 @@
+
+
 package com.codiecon.codiecon.models.entity;
 
-import com.codiecon.codiecon.models.enums.VehicleType;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -8,10 +10,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import java.util.Date;
 
 
 @Getter
@@ -21,16 +27,21 @@ import javax.persistence.Id;
 @ToString
 @Builder
 @Entity
-public class RentalPriceDetails {
+public class VehicleAvailableDates {
 
+  private static final String VEHICLE_DETAILS = "vehicle_details";
+  private static final String ID = "id";
 
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid")
   @Id
   private String id;
 
-  private VehicleType vehicleType;
+  @ManyToOne
+  @JoinColumn(name = VEHICLE_DETAILS, referencedColumnName = ID, nullable = false)
+  private VehicleDetails vehicleDetails;
 
-  private Long rentPerDay;
+  @DateTimeFormat(pattern="dd.MM.yyyy")
+  private Date date;
 
 }
