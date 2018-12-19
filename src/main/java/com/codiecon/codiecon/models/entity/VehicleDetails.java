@@ -1,5 +1,6 @@
 package com.codiecon.codiecon.models.entity;
 
+import com.codiecon.codiecon.models.enums.VehicleType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -38,7 +39,7 @@ public class VehicleDetails {
   @Column(nullable = false, unique = true)
   private String vehicleNumber;
 
-  private String vehicleType;
+  private VehicleType vehicleType;
 
   private String vehicleModel;
 

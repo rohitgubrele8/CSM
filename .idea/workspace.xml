@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f8c809f-dadd-490f-876a-7c4e4af9aed8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleAvailableDates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleAvailableDates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/RentalPriceDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/RentalPriceDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/VehicleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/VehicleType.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,22 +23,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="java" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="19" />
+          <entry key="java" value="141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="19" />
+          <entry key="JAVA" value="141" />
         </counts>
       </usages-collector>
     </session>
@@ -47,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+            <state relative-caret-position="15">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="25" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,11 +57,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/RentalPriceDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/VehicleType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleAvailableDates.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+            <state relative-caret-position="323">
+              <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -128,8 +150,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/Model.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.class" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleAvailableDates.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/VehicleType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/RentalPriceDetails.java" />
       </list>
     </option>
   </component>
@@ -203,6 +227,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="codiecon" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodieCon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -216,7 +250,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545211925239" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545214876143" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -343,10 +377,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/VehicleType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="15">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="25" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/RentalPriceDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -355,8 +406,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleAvailableDates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        <state relative-caret-position="323">
+          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="39" />
         </state>
       </provider>
     </entry>
