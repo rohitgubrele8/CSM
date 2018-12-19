@@ -1,6 +1,8 @@
 package com.codiecon.codiecon.models.entity;
 
 import com.codiecon.codiecon.models.enums.VehicleType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,11 +13,13 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,8 +31,9 @@ import javax.persistence.OneToMany;
 public class VehicleDetails {
 
   private static final String OWNER_DETAILS = "owner_details";
-  private static final String RENTAL_PRICE_DETAILS = "rental_price_details";
-  private static final String VEHICLE_AVAILABLE_DATES = "vehicle_available_dates";
+  private static final String RENTAL_PRICE_ID = "rental_price_id";
+  private static final String VEHICLE_AVAILABLE_DATES_ID = "vehicle_available_dates_id";
+  private static final String OWNER_ID = "owner_id";
   private static final String ID = "id";
 
   @GeneratedValue(generator = "uuid")
@@ -43,12 +48,14 @@ public class VehicleDetails {
 
   private String vehicleModel;
 
-  @ManyToOne
-  @JoinColumn(name = OWNER_DETAILS, referencedColumnName = ID, nullable = false)
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JsonBackReference
+  @JoinColumn(name = OWNER_ID, nullable = false)
   private OwnerDetails ownerDetails;
 
   @ManyToOne
-  @JoinColumn(name = RENTAL_PRICE_DETAILS, referencedColumnName = ID, nullable = false)
+  @JsonBackReference
+  @JoinColumn(name = RENTAL_PRICE_ID, nullable = false)
   private RentalPriceDetails rentalPriceDetails;
 
   private boolean isAvailable;
@@ -56,7 +63,8 @@ public class VehicleDetails {
   private String insuranceNumber;
 
   @OneToMany
-  @JoinColumn(name = VEHICLE_AVAILABLE_DATES, referencedColumnName = ID, nullable = false)
-  private VehicleAvailableDates vehicleAvailableDates;
+  @JsonManagedReference
+  @JoinColumn(name = VEHICLE_AVAILABLE_DATES_ID, nullable = false)
+  private List<VehicleAvailableDates> vehicleAvailableDates;
 
 }

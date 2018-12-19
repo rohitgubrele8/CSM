@@ -17,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = BookingDetails.TABLE_NAME, uniqueConstraints = @UniqueConstraint(columnNames = {
-    BookingDetails.COLUMN_DATE ,BookingDetails.COLUMN_VEHICLE_ID))
+    BookingDetails.COLUMN_DATE ,BookingDetails.COLUMN_VEHICLE_ID}))
 public class BookingDetails {
 
   public static final String TABLE_NAME = "booking";
