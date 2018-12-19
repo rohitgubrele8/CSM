@@ -15,7 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import java.util.Objects;
 
 @Getter
 @Setter
@@ -58,6 +57,5 @@ public class VehicleDetails {
   @OneToMany
   @JoinColumn(name = VEHICLE_AVAILABLE_DATES, referencedColumnName = ID, nullable = false)
   private VehicleAvailableDates vehicleAvailableDates;
-
 
 }
