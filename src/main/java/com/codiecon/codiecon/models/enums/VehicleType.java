@@ -4,4 +4,7 @@ import javax.persistence.Entity;
 
 @Entity
 public enum VehicleType {
+  BIKE,
+  CAR,
+  TRUCK
 }
