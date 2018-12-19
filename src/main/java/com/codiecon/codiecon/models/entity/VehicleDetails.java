@@ -1,5 +1,6 @@
 package com.codiecon.codiecon.models.entity;
 
+import com.codiecon.codiecon.models.enums.VehicleType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import java.util.Objects;
 
 @Getter
 @Setter
@@ -39,7 +39,7 @@ public class VehicleDetails {
   @Column(nullable = false, unique = true)
   private String vehicleNumber;
 
-  private String vehicleType;
+  private VehicleType vehicleType;
 
   private String vehicleModel;
 
@@ -58,6 +58,5 @@ public class VehicleDetails {
   @OneToMany
   @JoinColumn(name = VEHICLE_AVAILABLE_DATES, referencedColumnName = ID, nullable = false)
   private VehicleAvailableDates vehicleAvailableDates;
-
 
 }
