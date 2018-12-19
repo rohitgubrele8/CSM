@@ -1,6 +1,7 @@
 package com.codiecon.codiecon.models.entity;
 
 import com.codiecon.codiecon.models.enums.ApplicationStatus;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,11 +14,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -33,6 +37,8 @@ public class OwnerDetails {
   private static final long serialVersionUID = 1L;
   public static final String OWNER_TABLE = "ownerDetails";
   private static final String OWNER = "owner";
+  public static final String USER_ID = "user_id";
+  public static final String VEHICLE_ID = "vehicle_id";
 
   @Id
   @GeneratedValue(generator = "uuid")
@@ -60,11 +66,14 @@ public class OwnerDetails {
 
   private Long otp;
 
-  @OneToOne(mappedBy = OWNER)
+  @OneToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = OwnerDetails.USER_ID)
   private PaymentDetails paymentDetails;
 
-  @OneToMany(mappedBy = OWNER)
-  private VehicleDetails vehicleDetails;
+  @OneToMany()
+  @JsonManagedReference
+  @JoinColumn(name = VEHICLE_ID, nullable = false)
+  private List<VehicleDetails> vehicleDetails;
 
 
   @Override

@@ -3,6 +3,7 @@
 package com.codiecon.codiecon.models.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,6 +19,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.util.Date;
+import java.util.List;
 
 
 @Getter
@@ -30,6 +32,7 @@ import java.util.Date;
 public class VehicleAvailableDates {
 
   private static final String VEHICLE_DETAILS = "vehicle_details";
+  private static final String VEHICLE_ID = "vehicle_id";
   private static final String ID = "id";
 
   @GeneratedValue(generator = "uuid")
@@ -38,7 +41,8 @@ public class VehicleAvailableDates {
   private String id;
 
   @ManyToOne
-  @JoinColumn(name = VEHICLE_DETAILS, referencedColumnName = ID, nullable = false)
+  @JsonBackReference
+  @JoinColumn(name = VehicleAvailableDates.VEHICLE_ID, nullable = false)
   private VehicleDetails vehicleDetails;
 
   @DateTimeFormat(pattern="dd.MM.yyyy")
