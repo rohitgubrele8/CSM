@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f8c809f-dadd-490f-876a-7c4e4af9aed8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/ApplicationStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/BookingDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/BookingDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/LoginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/LoginDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/OwnerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/OwnerDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/PaymentDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/PaymentDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/VehicleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/VehicleType.java" afterDir="false" />
-    </list>
+    <list default="true" id="8f8c809f-dadd-490f-876a-7c4e4af9aed8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +11,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/OwnerDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="335">
+              <caret line="85" column="3" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-175">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,9 +84,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="22" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="730" />
+    <option name="height" value="729" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -154,6 +157,15 @@
               <item name="models" type="462c0819:PsiDirectoryNode" />
               <item name="enums" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodieCon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -164,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545214069463" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545216354980" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -206,7 +218,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4623000" />
+    <option name="totallyTimeSpent" value="5255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -278,20 +290,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/Model.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/enums/VehicleType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -317,13 +317,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -353,8 +346,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/OwnerDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="335">
+          <caret line="85" column="3" selection-start-line="85" selection-start-column="3" selection-end-line="85" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/VehicleDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
