@@ -67,4 +67,6 @@ public class VehicleDetails {
   @JoinColumn(name = VEHICLE_AVAILABLE_DATES_ID, nullable = false)
   private List<VehicleAvailableDates> vehicleAvailableDates;
 
+  private  boolean markForDelete;
+
 }

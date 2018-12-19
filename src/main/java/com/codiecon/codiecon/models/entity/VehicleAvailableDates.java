@@ -48,4 +48,6 @@ public class VehicleAvailableDates {
   @DateTimeFormat(pattern="dd.MM.yyyy")
   private Date date;
 
+  private  boolean markForDelete;
+
 }

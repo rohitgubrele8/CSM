@@ -43,7 +43,7 @@ public class OwnerDetails {
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid")
-  private Long id;
+  private String id;
 
   @Column(nullable = false)
   private String name;
@@ -65,6 +65,8 @@ public class OwnerDetails {
   private ApplicationStatus status;
 
   private Long otp;
+
+  private  boolean markForDelete;
 
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = OwnerDetails.USER_ID)

@@ -18,6 +18,7 @@ public class DriverDetails {
   public static final String COLUMN_DL_NUMBER = "dl_number";
   public static final String COLUMN_CONTACT_NUMBER = "contact_number";
   public static final String COLUMN_IS_APPROVED = "is_approved";
+  public static final String COLUMN_DL_TYPE = "dl_type";
 
   @Id
   @GeneratedValue(generator = "uuid")
@@ -31,11 +32,16 @@ public class DriverDetails {
   @Column(name = DriverDetails.COLUMN_DL_NUMBER, nullable = false)
   private String dlNumber;
 
+  @Column(name = DriverDetails.COLUMN_DL_TYPE, nullable = false)
+  private String dlType;
+
   @Column(name = DriverDetails.COLUMN_CONTACT_NUMBER, nullable = false)
   private String contactNumber;
 
   @Column(name = DriverDetails.COLUMN_IS_APPROVED, nullable = false)
   private boolean approved;
+
+  private  boolean markForDelete;
 
   public DriverDetails(String id, String name, String dlNumber, String contactNumber, boolean approved) {
     this.id = id;

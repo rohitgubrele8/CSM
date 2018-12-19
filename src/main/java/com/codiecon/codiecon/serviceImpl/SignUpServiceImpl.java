@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -30,6 +31,7 @@ public class SignUpServiceImpl implements SignUpService {
   @Override
   public void vehicleOwnerSignUp(OwnerDetailsRequest ownerDetailsRequest) {
     OwnerDetails ownerDetails = new OwnerDetails();
+//    ownerDetails.setId(String.valueOf(UUID.randomUUID()));
     ownerDetails.setEmail(ownerDetailsRequest.getEmail());
     ownerDetails.setName(ownerDetailsRequest.getName());
     ownerDetails.setContactNumber(ownerDetailsRequest.getContactNumber());

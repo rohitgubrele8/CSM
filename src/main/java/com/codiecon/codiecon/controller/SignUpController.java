@@ -17,13 +17,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Api(value = "SignUpController", description = "SignUpFlow")
 @RestController
+@RequestMapping(value = "/signup", produces = MediaType.APPLICATION_JSON_VALUE,
+                consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 public class SignUpController {
 
 
   @Autowired
   private SignUpService signUpService;
 
-  @RequestMapping(value = "vehicleOwner", method = RequestMethod.POST, consumes = MediaType
+  @RequestMapping(value = "/vehicleOwner", method = RequestMethod.POST, consumes = MediaType
       .APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
   public BaseResponse saveVehicleOwnerDetails(
       @Validated @RequestBody OwnerDetailsRequest ownerDetailsRequest) {
