@@ -3,6 +3,7 @@ package com.codiecon.codiecon.controller;
 import com.codiecon.codiecon.models.Response.BaseResponse;
 import com.codiecon.codiecon.models.Response.OwnerDetailsResponse;
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
+import com.codiecon.codiecon.models.request.VehicleAvailabilityRequest;
 import com.codiecon.codiecon.models.vo.OwnerDetailsVo;
 import com.codiecon.codiecon.service.OwnerDetailsService;
 import io.swagger.annotations.Api;
@@ -45,4 +46,13 @@ public class OwnerDetailsController {
         new OwnerDetailsResponse(true, HttpStatus.OK.value(), ownerDetailsVo);
     return ownerDetailsResponse;
   }
+
+  @RequestMapping(value = "/vehicleAvailability", method = RequestMethod.POST, consumes = MediaType
+      .APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
+  public BaseResponse vehicleAvailability(
+      @Validated @RequestBody VehicleAvailabilityRequest vehicleAvailabilityRequest) {
+    ownerDetailsService.saveVehicleAvailability(vehicleAvailabilityRequest);
+    return new BaseResponse(true, HttpStatus.OK.value());
+  }
+
 }
