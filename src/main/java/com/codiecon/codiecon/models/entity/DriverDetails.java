@@ -6,9 +6,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 @Table(name = DriverDetails.TABLE_NAME)
 public class DriverDetails {
 
@@ -25,7 +33,6 @@ public class DriverDetails {
   @GenericGenerator(name = "uuid", strategy = "uuid")
   @Column(name = DriverDetails.COLUMN_ID, nullable = false)
   private String id;
-
   @Column(name = DriverDetails.COLUMN_NAME, nullable = false)
   private String name;
 
@@ -51,58 +58,4 @@ public class DriverDetails {
     this.approved = approved;
   }
 
-  public DriverDetails() {
-  }
-
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getDlNumber() {
-    return dlNumber;
-  }
-
-  public void setDlNumber(String dlNumber) {
-    this.dlNumber = dlNumber;
-  }
-
-  public String getContactNumber() {
-    return contactNumber;
-  }
-
-  public void setContactNumber(String contactNumber) {
-    this.contactNumber = contactNumber;
-  }
-
-  public boolean isApproved() {
-    return approved;
-  }
-
-  public void setApproved(boolean approved) {
-    this.approved = approved;
-  }
-
-  @Override
-  public String toString() {
-    final StringBuilder sb = new StringBuilder("DriverDetails{");
-    sb.append("id='").append(id).append('\'');
-    sb.append(", name='").append(name).append('\'');
-    sb.append(", dlNumber='").append(dlNumber).append('\'');
-    sb.append(", contactNumber='").append(contactNumber).append('\'');
-    sb.append(", approved=").append(approved);
-    sb.append('}');
-    return sb.toString();
-  }
 }

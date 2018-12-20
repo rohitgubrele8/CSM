@@ -45,19 +45,14 @@ public class OwnerDetails {
   @GenericGenerator(name = "uuid", strategy = "uuid")
   private String id;
 
-  @Column(nullable = false)
   private String name;
 
-  @Column(updatable = false, nullable = false, unique = true)
-  private String email;
-
-  @Column(nullable = false, unique = true)
   private String contactNumber;
 
-  @Column(nullable = false)
   private String ownerAddress;
 
-  @Column(nullable = false)
+  private String email;
+
   private String zipCode;
 
   @Enumerated(value = EnumType.STRING)
@@ -66,7 +61,7 @@ public class OwnerDetails {
 
   private Long otp;
 
-  private  boolean markForDelete;
+  private boolean markForDelete;
 
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = OwnerDetails.PAYMENT_ID)
@@ -81,15 +76,14 @@ public class OwnerDetails {
       return false;
     OwnerDetails that = (OwnerDetails) o;
     return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects
-        .equals(email, that.email) && Objects.equals(contactNumber, that.contactNumber) && Objects
+        .equals(contactNumber, that.contactNumber) && Objects
         .equals(ownerAddress, that.ownerAddress) && Objects.equals(zipCode, that.zipCode)
-        && status == that.status && Objects.equals(paymentDetails, that.paymentDetails) ;
+        && status == that.status && Objects.equals(paymentDetails, that.paymentDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects
-        .hash(id, name, email, contactNumber, ownerAddress, zipCode, status, paymentDetails);
+    return Objects.hash(id, name, contactNumber, ownerAddress, zipCode, status, paymentDetails);
   }
 }
 

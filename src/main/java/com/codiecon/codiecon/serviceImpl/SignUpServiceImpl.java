@@ -1,16 +1,20 @@
 package com.codiecon.codiecon.serviceImpl;
 
-import com.codiecon.codiecon.models.entity.OwnerDetails;
-import com.codiecon.codiecon.models.enums.ApplicationStatus;
+import com.codiecon.codiecon.models.Response.LoginResponse;
+import com.codiecon.codiecon.models.entity.LoginDetails;
+import com.codiecon.codiecon.models.request.LoginRequest;
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
+import com.codiecon.codiecon.models.request.SignUpRequest;
+import com.codiecon.codiecon.repository.DriverDetailsRepository;
+import com.codiecon.codiecon.repository.LoginDetailsRepository;
 import com.codiecon.codiecon.repository.OwnerDetailsRepository;
 import com.codiecon.codiecon.service.SignUpService;
+import com.google.common.base.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.Calendar;
-import java.util.UUID;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Objects;
 
 
 @Service
@@ -22,58 +26,39 @@ public class SignUpServiceImpl implements SignUpService {
   @Autowired
   OwnerDetailsRepository ownerDetailsRepository;
 
-  @Override
-  public void driverSignUp() {
+  @Autowired
+  LoginDetailsRepository loginDetailsRepository;
 
+  @Autowired
+  DriverDetailsRepository driverDetailsRepository;
+
+
+  @Override
+  public void signUp(SignUpRequest signUpRequest) {
+
+    try {
+      LoginDetails loginDetails = new LoginDetails();
+      loginDetails.setEmail(signUpRequest.getEmail());
+      loginDetails.setPassword(signUpRequest.getPassword());
+      loginDetails.setRole(signUpRequest.getRole());
+      loginDetails.setName(signUpRequest.getName());
+      loginDetailsRepository.save(loginDetails);
+    } catch (Exception e) {
+      throw new RuntimeException("Duplicate email");
+    }
   }
 
-  @Deprecated
-  @Override
-  public void vehicleOwnerSignUp(OwnerDetailsRequest ownerDetailsRequest) {
-    OwnerDetails ownerDetails = new OwnerDetails();
-    ownerDetails.setEmail(ownerDetailsRequest.getEmail());
-    ownerDetails.setName(ownerDetailsRequest.getName());
-    ownerDetails.setContactNumber(ownerDetailsRequest.getContactNumber());
-    ownerDetails.setOwnerAddress(ownerDetailsRequest.getOwnerAddress());
-    ownerDetails.setZipCode(ownerDetailsRequest.getZipCode());
-    ownerDetails.setOtp(Long.valueOf(ThreadLocalRandom.current()
-        .nextInt(MIN_OTP_RANGE, MAX_OTP_RANGE + 1)));
-    ownerDetails.setStatus(ApplicationStatus.OTP_PENDING);
-    ownerDetailsRepository.save(ownerDetails);
-    //todo :: send otp in email or phone
-  }
-
-//  @Override
-//  public void vehicleOwnerOtpValidation(OwnerOtpRequest ownerOtpRequest){
-//    OwnerDetails ownerDetails = ownerDetailsRepository.findByEmail(ownerOtpRequest.getEmail());
-//    if(ownerDetails.getOtp().equals(ownerOtpRequest.getOtp())){
-//      ownerDetails.setStatus(ApplicationStatus.OTP_VERIFIED);
-//    }
-//    ownerDetailsRepository.save(ownerDetails);
-//  }
 
   @Override
-  public void bookVehicle() {
-
-  }
-
-  @Override
-  public void updateVehicleAvailability() {
-
-  }
-
-  @Override
-  public void cancelBooking() {
-
-  }
-
-  @Override
-  public void uploadVehicleDocuments() {
-
-  }
-
-  @Override
-  public void uploadDriverDocuments() {
+  public LoginResponse login(LoginRequest loginRequest) {
+    try {
+      LoginDetails loginDetails = loginDetailsRepository
+          .findByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());
+      Preconditions.checkArgument(Objects.nonNull(loginDetails));
+      return new LoginResponse(true, HttpStatus.OK.value(), true, loginDetails.getRole());
+    } catch (Exception e) {
+      return new LoginResponse(false, HttpStatus.OK.value(), false, null);
+    }
 
   }
 
