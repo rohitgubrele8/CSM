@@ -53,7 +53,12 @@
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.6.1</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.gdn.tms.tms-util</groupId>
+            <artifactId>rest-api-util</artifactId>
+            <version>1.6.0-0</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>

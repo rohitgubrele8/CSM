@@ -1,10 +1,13 @@
 package com.codiecon.codiecon.serviceImpl;
 
 import com.codiecon.codiecon.models.Response.LoginResponse;
+import com.codiecon.codiecon.models.entity.Documents;
 import com.codiecon.codiecon.models.entity.LoginDetails;
+import com.codiecon.codiecon.models.enums.DocumentType;
+import com.codiecon.codiecon.models.request.DocumentSubmitRequest;
 import com.codiecon.codiecon.models.request.LoginRequest;
-import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
 import com.codiecon.codiecon.models.request.SignUpRequest;
+import com.codiecon.codiecon.repository.DocumentsRepository;
 import com.codiecon.codiecon.repository.DriverDetailsRepository;
 import com.codiecon.codiecon.repository.LoginDetailsRepository;
 import com.codiecon.codiecon.repository.OwnerDetailsRepository;
@@ -13,6 +16,11 @@ import com.google.common.base.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
+import java.io.File;
+
+import com.gdn.tms.util.rest.util.FileHandler;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Objects;
 
@@ -31,6 +39,9 @@ public class SignUpServiceImpl implements SignUpService {
 
   @Autowired
   DriverDetailsRepository driverDetailsRepository;
+
+  @Autowired
+  DocumentsRepository documentsRepository;
 
 
   @Override
@@ -61,5 +72,37 @@ public class SignUpServiceImpl implements SignUpService {
     }
 
   }
+
+
+  @Override
+  public void uploadDocuments(MultipartFile file, String email, DocumentType documentType) {
+    try {
+      String fileName =
+          new StringBuilder().append(generateImageFileName(documentType.toString(), email))
+              .toString();
+
+      File imageFile = new File(fileName);
+      imageFile.getParentFile().mkdirs();
+      imageFile.setWritable(true);
+      FileHandler.saveFile(fileName, file);
+      Documents documents = documentsRepository.findByEmail(email);
+      if (null == documents) {
+        documents = new Documents(email, generateImageFileName(documentType.toString(), email),
+            documentType);
+        documentsRepository.save(documents);
+
+      } else {
+        throw new RuntimeException("Documents for email already exit");
+      }
+    } catch (Exception e) {
+      throw new RuntimeException(e.getMessage());
+    }
+  }
+
+  private String generateImageFileName(String infoType, String email) {
+    return new StringBuilder("CMS/").append(infoType).append("/").append(email).append("/")
+        .append(infoType).append(".jpg").toString();
+  }
+
 
 }
