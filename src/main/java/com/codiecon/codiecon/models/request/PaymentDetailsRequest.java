@@ -1,5 +1,6 @@
 package com.codiecon.codiecon.models.request;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -9,8 +10,6 @@ import lombok.ToString;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 
 @Getter
 @Setter
@@ -18,12 +17,15 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OwnerOtpRequest {
-
-  @NotNull
-  private Long otp;
+public class PaymentDetailsRequest {
 
   @NotEmpty
-  @Email
-  private String email;
+  private String bankAccountNumber;
+
+  @NotEmpty
+  private String branchName;
+
+  @NotEmpty
+  private String bankName;
+
 }
