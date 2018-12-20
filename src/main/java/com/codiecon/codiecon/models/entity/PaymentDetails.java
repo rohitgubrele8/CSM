@@ -42,6 +42,10 @@ public class PaymentDetails {
   @Column(nullable = false)
   private String bankName;
 
+  private double amountOwe;
+
+  private double amountDue;
+
   private  boolean markForDelete;
 
   @Override

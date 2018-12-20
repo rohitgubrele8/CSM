@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import com.codiecon.codiecon.models.Response.DriverDetailsResponse;
 import com.codiecon.codiecon.models.Response.VehicleDetailsResponse;
 import com.codiecon.codiecon.models.enums.VehicleType;
+import com.codiecon.codiecon.models.request.BookingRequest;
 import com.codiecon.codiecon.models.request.DriverDetailsRequest;
 import com.codiecon.codiecon.models.vo.DriverDetailsVo;
 import com.codiecon.codiecon.models.vo.VehicleDetailsVo;
@@ -32,6 +33,7 @@ import com.codiecon.codiecon.models.entity.VehicleAvailableDates;
 import com.codiecon.codiecon.models.entity.VehicleDetails;
 import com.codiecon.codiecon.models.enums.DLType;
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
+import com.codiecon.codiecon.service.BookingService;
 import com.codiecon.codiecon.service.DriverService;
 
 import io.swagger.annotations.Api;
@@ -43,6 +45,9 @@ public class DriverController {
 
   @Autowired
   private DriverService driverService;
+
+  @Autowired
+  private BookingService bookingService;
 
   @RequestMapping(value = "/save", method = RequestMethod.POST, consumes =
       MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -90,6 +95,13 @@ public class DriverController {
         vehicleDetails.stream().map(vehicleDetails1 -> toVehicleDetailsVo(vehicleDetails1))
             .collect(Collectors.toList());
     return new VehicleDetailsResponse(true, HttpStatus.OK.value(), vehicleDetailsVos);
+  }
+
+  @RequestMapping(value = "/bookVehicle", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE,
+                  produces = MediaType.APPLICATION_JSON_VALUE)
+  public BaseResponse bookVehicle(@RequestBody BookingRequest request) {
+    boolean status = bookingService.bookVehicle(request);
+    return new BaseResponse(status, HttpStatus.OK.value());
   }
 
   private VehicleDetailsVo toVehicleDetailsVo(VehicleDetails vehicleDetails) {
