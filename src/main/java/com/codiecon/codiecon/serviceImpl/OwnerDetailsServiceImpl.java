@@ -1,5 +1,6 @@
 package com.codiecon.codiecon.serviceImpl;
 
+import ch.qos.logback.core.joran.util.beans.BeanUtil;
 import com.codiecon.codiecon.models.entity.OwnerDetails;
 import com.codiecon.codiecon.models.entity.PaymentDetails;
 import com.codiecon.codiecon.models.entity.VehicleAvailableDates;
@@ -14,6 +15,7 @@ import com.codiecon.codiecon.repository.PaymentDetailsRepository;
 import com.codiecon.codiecon.repository.VehicleAvailableDatesRepository;
 import com.codiecon.codiecon.repository.VehicleDetailsRepository;
 import com.codiecon.codiecon.service.OwnerDetailsService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -77,6 +79,8 @@ public class OwnerDetailsServiceImpl implements OwnerDetailsService {
     return ownerDetailsVo;
   }
 
+  @Transactional
+  @Override
   public void saveVehicleAvailability(VehicleAvailabilityRequest vehicleAvailabilityRequest) {
     VehicleDetails vehicleDetails =
         vehicleDetailsRepository.findById(vehicleAvailabilityRequest.getVehicleId()).get();
@@ -89,11 +93,13 @@ public class OwnerDetailsServiceImpl implements OwnerDetailsService {
     date.setSeconds(0);
     for(index = 0; index<7; index++){
       date.setDate(date.getDate() + 1);
+      Date date1 = new Date();
+      BeanUtils.copyProperties(date,date1);
       if(availibilityCode.substring(index,index+1).equals("1")){
         VehicleAvailableDates vehicleAvailableDates = new VehicleAvailableDates();
         vehicleAvailableDates.setVehicleDetails(vehicleDetails);
-        vehicleAvailableDates.setDate(date);
-        vehicleAvailableDatesRepository.save(vehicleAvailableDates);
+        vehicleAvailableDates.setDate(date1);
+        vehicleAvailableDatesRepository.saveAndFlush(vehicleAvailableDates);
       }
     }
 
