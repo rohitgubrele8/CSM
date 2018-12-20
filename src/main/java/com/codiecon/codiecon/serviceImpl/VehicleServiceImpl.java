@@ -56,7 +56,9 @@ public class VehicleServiceImpl implements VehicleService {
       vehicleDetailsVo.setInsuranceNumber(vehicleDetails.getInsuranceNumber());
       vehicleDetailsVo.setVehicleType(vehicleDetails.getVehicleType());
       vehicleDetailsVo.setVehicleModel(vehicleDetails.getVehicleModel());
+      vehicleDetailsVo.setId(vehicleDetails.getId());
       vehicleDetailsVos.add(vehicleDetailsVo);
+
     }
     return vehicleDetailsVos;
   }

@@ -18,6 +18,8 @@ import javax.validation.constraints.NotEmpty;
 @Builder
 public class DriverDetailsVo {
 
+  private String driverId;
+
   private String name;
 
   private String dlNumber;

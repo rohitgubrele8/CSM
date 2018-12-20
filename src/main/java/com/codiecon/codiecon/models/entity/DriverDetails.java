@@ -22,6 +22,7 @@ import com.codiecon.codiecon.models.enums.DLType;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Builder

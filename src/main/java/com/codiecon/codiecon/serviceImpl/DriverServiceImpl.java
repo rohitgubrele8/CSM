@@ -85,6 +85,7 @@ public class DriverServiceImpl implements DriverService {
     paymentDetailsVo.setBranchName(paymentDetails.getBranchName());
     paymentDetailsVo.setBankName(paymentDetails.getBankName());
     paymentDetailsVo.setBankAccountNumber(paymentDetails.getBankAccountNumber());
+    driverDetailsVo.setDriverId(driverDetails.getId());
     driverDetailsVo.setEmail(email);
     driverDetailsVo.setContactNumber(driverDetails.getContactNumber());
     driverDetailsVo.setName(driverDetails.getEmail());

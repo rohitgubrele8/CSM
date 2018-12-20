@@ -56,6 +56,7 @@ public class OwnerDetailsServiceImpl implements OwnerDetailsService {
     paymentDetailsVo.setBankName(paymentDetails.getBankName());
     paymentDetailsVo.setBankAccountNumber(paymentDetails.getBankAccountNumber());
     ownerDetailsVo.setEmail(email);
+    ownerDetailsVo.setOwnerId(ownerDetails.getId());
     ownerDetailsVo.setContactNumber(ownerDetails.getContactNumber());
     ownerDetailsVo.setName(ownerDetails.getEmail());
     ownerDetailsVo.setOwnerAddress(ownerDetails.getOwnerAddress());

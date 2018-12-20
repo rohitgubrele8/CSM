@@ -17,6 +17,7 @@ import lombok.ToString;
 @Builder
 public class VehicleDetailsVo {
 
+  private String Id;
 
   private String vehicleNumber;
 
