@@ -18,6 +18,8 @@ public interface DriverService {
 
   List<VehicleAvailableDates> findByAvailabledates(Date tomorrowStart, Date tomorrowEnd);
 
+  boolean isAvailableForTomorrow(String vehicleId, Date tomorrowStart, Date tomorrowEnd);
+
   public void saveDriverDetails(DriverDetailsRequest driverDetailsRequest);
 
   public DriverDetailsVo getDriverDetails(String email);

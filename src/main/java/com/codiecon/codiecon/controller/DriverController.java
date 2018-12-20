@@ -88,6 +88,9 @@ public class DriverController {
     List<VehicleDetails> vehicleDetails = vehicleAvailableDates.stream()
         .map(vehicleAvailableDates1 -> vehicleAvailableDates1.getVehicleDetails())
         .collect(Collectors.toList());
+    vehicleDetails = vehicleDetails.stream().filter(
+        vehicleDetails1 -> !driverService.isAvailableForTomorrow(vehicleDetails1.getId(), tommorowStart, tomorrowEnd))
+        .collect(Collectors.toList());
     vehicleDetails = vehicleDetails.stream()
         .filter(vehicleDetails1 -> validate(vehicleDetails1, driverDetails.getDlType()))
         .collect(Collectors.toList());

@@ -1,5 +1,7 @@
 package com.codiecon.codiecon.serviceImpl;
 
+import java.util.Date;
+
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,6 +42,13 @@ public class BookingServiceImpl implements BookingService {
     DriverDetails driverDetails = new DriverDetails();
     driverDetails.setId(bookingRequest.getDriverId());
     bookingDetails.setDriverDetails(driverDetails);
+    Date date = new Date();
+    date.setTime(0);
+    date.setHours(0);
+    date.setSeconds(0);
+    Date tomorrow = new Date();
+    tomorrow.setDate(date.getDate() + 1);
+    bookingDetails.setDate(tomorrow);
     VehicleDetails vehicleDetails = new VehicleDetails();
     vehicleDetails.setId(bookingRequest.getVehicleId());
     bookingDetails.setVehicleDetails(vehicleDetails);

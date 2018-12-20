@@ -9,6 +9,7 @@ import com.codiecon.codiecon.models.entity.PaymentDetails;
 import com.codiecon.codiecon.models.request.DriverDetailsRequest;
 import com.codiecon.codiecon.models.vo.DriverDetailsVo;
 import com.codiecon.codiecon.models.vo.PaymentDetailsVo;
+import com.codiecon.codiecon.repository.BookingDetailsRepository;
 import com.codiecon.codiecon.repository.PaymentDetailsRepository;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +34,17 @@ public class DriverServiceImpl implements DriverService {
   @Autowired
   private PaymentDetailsRepository paymentDetailsRepository;
 
+  @Autowired
+  private BookingDetailsRepository bookingDetailsRepository;
+
   @Override
   public DriverDetails findByDriverId(String driverId) {
     return driverDetailsRepository.findById(driverId).get();
+  }
+
+  @Override
+  public boolean isAvailableForTomorrow(String vehicleId, Date tomorrowStart, Date tomorrowEnd) {
+    return bookingDetailsRepository.existsByVehicleIdAndBookingDateBetween(vehicleId, tomorrowStart, tomorrowEnd);
   }
 
   @Override
