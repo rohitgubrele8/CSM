@@ -2,6 +2,7 @@ package com.codiecon.codiecon.controller;
 
 
 import com.codiecon.codiecon.models.Response.BaseResponse;
+import com.codiecon.codiecon.models.entity.LoginDetails;
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
 import com.codiecon.codiecon.models.request.OwnerOtpRequest;
 import com.codiecon.codiecon.service.SignUpService;
@@ -17,13 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Api(value = "SignUpController", description = "SignUpFlow")
 @RestController
+@RequestMapping(value = "/signUp")
 public class SignUpController {
 
 
   @Autowired
   private SignUpService signUpService;
 
-  @RequestMapping(value = "vehicleOwner", method = RequestMethod.POST, consumes = MediaType
+  @RequestMapping(value = "/vehicleOwner", method = RequestMethod.POST, consumes = MediaType
       .APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
   public BaseResponse saveVehicleOwnerDetails(
       @Validated @RequestBody OwnerDetailsRequest ownerDetailsRequest) {
@@ -31,7 +33,7 @@ public class SignUpController {
     return new BaseResponse(true, HttpStatus.OK.value());
   }
 
-  @RequestMapping(value = "validateOwnerOtp", method = RequestMethod.POST, produces = MediaType
+  @RequestMapping(value = "/validateOwnerOtp", method = RequestMethod.POST, produces = MediaType
       .APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
   public BaseResponse validateOwnerOtp(@Validated @RequestBody OwnerOtpRequest otpRequest) {
     signUpService.vehicleOwnerOtpValidation(otpRequest);
