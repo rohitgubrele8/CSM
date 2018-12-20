@@ -60,9 +60,9 @@ public class VehicleDetails {
 
   private String insuranceNumber;
 
-  @OneToMany(fetch = FetchType.LAZY)
-  @JoinColumn(name = VEHICLE_AVAILABLE_DATES_ID)
-  private List<VehicleAvailableDates> vehicleAvailableDates;
+//  @OneToMany(fetch = FetchType.LAZY)
+//  @JoinColumn(name = VEHICLE_AVAILABLE_DATES_ID)
+//  private List<VehicleAvailableDates> vehicleAvailableDates;
 
   private  boolean markForDelete;
 
