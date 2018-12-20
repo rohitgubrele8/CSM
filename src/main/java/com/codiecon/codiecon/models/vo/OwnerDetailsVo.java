@@ -16,6 +16,8 @@ import lombok.ToString;
 @Builder
 public class OwnerDetailsVo {
 
+  private String ownerId;
+
   private String name;
 
   private String email;

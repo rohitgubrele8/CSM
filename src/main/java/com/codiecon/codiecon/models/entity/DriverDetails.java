@@ -22,6 +22,7 @@ import com.codiecon.codiecon.models.enums.DLType;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Builder
@@ -54,6 +55,7 @@ public class DriverDetails {
   @Column(name = DriverDetails.COLUMN_CONTACT_NUMBER, nullable = false)
   private String contactNumber;
 
+  @Column(nullable = false,unique = true)
   private String email;
 
   @Column(name = DriverDetails.COLUMN_IS_APPROVED, nullable = false)

@@ -6,10 +6,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import com.codiecon.codiecon.models.entity.PaymentDetails;
+import com.codiecon.codiecon.models.entity.VehicleDetails;
 import com.codiecon.codiecon.models.request.DriverDetailsRequest;
 import com.codiecon.codiecon.models.vo.DriverDetailsVo;
 import com.codiecon.codiecon.models.vo.PaymentDetailsVo;
+import com.codiecon.codiecon.repository.BookingDetailsRepository;
 import com.codiecon.codiecon.repository.PaymentDetailsRepository;
+import com.codiecon.codiecon.repository.VehicleDetailsRepository;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,9 +36,21 @@ public class DriverServiceImpl implements DriverService {
   @Autowired
   private PaymentDetailsRepository paymentDetailsRepository;
 
+  @Autowired
+  private BookingDetailsRepository bookingDetailsRepository;
+
+  @Autowired
+  private VehicleDetailsRepository vehicleDetailsRepository;
+
   @Override
   public DriverDetails findByDriverId(String driverId) {
     return driverDetailsRepository.findById(driverId).get();
+  }
+
+  @Override
+  public boolean isNotAvailableForTomorrow(String vehicleId, Date tomorrowStart, Date tomorrowEnd) {
+    VehicleDetails vehicleDetails = vehicleDetailsRepository.findById(vehicleId).get();
+    return bookingDetailsRepository.existsByVehicleDetailsAndDateBetween(vehicleDetails, tomorrowStart, tomorrowEnd);
   }
 
   @Override
@@ -85,6 +100,7 @@ public class DriverServiceImpl implements DriverService {
     paymentDetailsVo.setBranchName(paymentDetails.getBranchName());
     paymentDetailsVo.setBankName(paymentDetails.getBankName());
     paymentDetailsVo.setBankAccountNumber(paymentDetails.getBankAccountNumber());
+    driverDetailsVo.setDriverId(driverDetails.getId());
     driverDetailsVo.setEmail(email);
     driverDetailsVo.setContactNumber(driverDetails.getContactNumber());
     driverDetailsVo.setName(driverDetails.getEmail());

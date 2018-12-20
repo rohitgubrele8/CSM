@@ -51,6 +51,7 @@ public class OwnerDetails {
 
   private String ownerAddress;
 
+  @Column(nullable = false,unique = true)
   private String email;
 
   private String zipCode;
