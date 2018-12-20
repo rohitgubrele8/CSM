@@ -37,13 +37,13 @@ public class OwnerDetails {
   private static final long serialVersionUID = 1L;
   public static final String OWNER_TABLE = "ownerDetails";
   private static final String OWNER = "owner";
-  public static final String USER_ID = "user_id";
   public static final String VEHICLE_ID = "vehicle_id";
+  public static final String PAYMENT_ID = "payment_id";
 
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid")
-  private Long id;
+  private String id;
 
   @Column(nullable = false)
   private String name;
@@ -66,8 +66,10 @@ public class OwnerDetails {
 
   private Long otp;
 
+  private  boolean markForDelete;
+
   @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = OwnerDetails.USER_ID)
+  @JoinColumn(name = OwnerDetails.PAYMENT_ID)
   private PaymentDetails paymentDetails;
 
   @OneToMany()

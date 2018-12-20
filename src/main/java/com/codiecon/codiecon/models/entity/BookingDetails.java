@@ -44,6 +44,8 @@ public class BookingDetails {
   @DateTimeFormat(pattern = "dd.MM.yyyy")
   private Date date;
 
+  private  boolean markForDelete;
+
   public BookingDetails(String id, DriverDetails driverDetails, VehicleDetails vehicleDetails, Date date) {
     this.id = id;
     this.driverDetails = driverDetails;

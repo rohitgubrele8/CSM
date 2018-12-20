@@ -33,4 +33,6 @@ public class RentalPriceDetails {
 
   private Long rentPerDay;
 
+  private  boolean markForDelete;
+
 }
