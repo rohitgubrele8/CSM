@@ -72,11 +72,6 @@ public class OwnerDetails {
   @JoinColumn(name = OwnerDetails.PAYMENT_ID)
   private PaymentDetails paymentDetails;
 
-  @OneToMany()
-  @JsonManagedReference
-  @JoinColumn(name = VEHICLE_ID, nullable = false)
-  private List<VehicleDetails> vehicleDetails;
-
 
   @Override
   public boolean equals(Object o) {
@@ -88,15 +83,13 @@ public class OwnerDetails {
     return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects
         .equals(email, that.email) && Objects.equals(contactNumber, that.contactNumber) && Objects
         .equals(ownerAddress, that.ownerAddress) && Objects.equals(zipCode, that.zipCode)
-        && status == that.status && Objects.equals(paymentDetails, that.paymentDetails) && Objects
-        .equals(vehicleDetails, that.vehicleDetails);
+        && status == that.status && Objects.equals(paymentDetails, that.paymentDetails) ;
   }
 
   @Override
   public int hashCode() {
     return Objects
-        .hash(id, name, email, contactNumber, ownerAddress, zipCode, status, paymentDetails,
-            vehicleDetails);
+        .hash(id, name, email, contactNumber, ownerAddress, zipCode, status, paymentDetails);
   }
 }
 

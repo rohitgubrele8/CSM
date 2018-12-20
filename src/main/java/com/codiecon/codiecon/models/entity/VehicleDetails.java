@@ -49,12 +49,10 @@ public class VehicleDetails {
   private String vehicleModel;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JsonBackReference
   @JoinColumn(name = OWNER_ID, nullable = false)
   private OwnerDetails ownerDetails;
 
-  @ManyToOne
-  @JsonBackReference
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = RENTAL_PRICE_ID, nullable = false)
   private RentalPriceDetails rentalPriceDetails;
 
@@ -62,9 +60,8 @@ public class VehicleDetails {
 
   private String insuranceNumber;
 
-  @OneToMany
-  @JsonManagedReference
-  @JoinColumn(name = VEHICLE_AVAILABLE_DATES_ID, nullable = false)
+  @OneToMany(fetch = FetchType.LAZY)
+  @JoinColumn(name = VEHICLE_AVAILABLE_DATES_ID)
   private List<VehicleAvailableDates> vehicleAvailableDates;
 
   private  boolean markForDelete;

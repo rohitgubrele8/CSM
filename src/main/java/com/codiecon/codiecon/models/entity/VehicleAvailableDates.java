@@ -14,6 +14,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -40,8 +41,7 @@ public class VehicleAvailableDates {
   @Id
   private String id;
 
-  @ManyToOne
-  @JsonBackReference
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = VehicleAvailableDates.VEHICLE_ID, nullable = false)
   private VehicleDetails vehicleDetails;
 
