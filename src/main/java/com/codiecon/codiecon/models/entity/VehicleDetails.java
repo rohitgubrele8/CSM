@@ -11,6 +11,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -48,11 +49,11 @@ public class VehicleDetails {
 
   private String vehicleModel;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
   @JoinColumn(name = OWNER_ID, nullable = false)
   private OwnerDetails ownerDetails;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
   @JoinColumn(name = RENTAL_PRICE_ID, nullable = false)
   private RentalPriceDetails rentalPriceDetails;
 

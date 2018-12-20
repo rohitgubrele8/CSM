@@ -1,9 +1,5 @@
 package com.codiecon.codiecon.controller;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,6 +7,7 @@ import java.util.stream.Collectors;
 import com.codiecon.codiecon.models.Response.DriverDetailsResponse;
 import com.codiecon.codiecon.models.Response.VehicleDetailsResponse;
 import com.codiecon.codiecon.models.enums.VehicleType;
+import com.codiecon.codiecon.models.request.BookingRequest;
 import com.codiecon.codiecon.models.request.DriverDetailsRequest;
 import com.codiecon.codiecon.models.vo.DriverDetailsVo;
 import com.codiecon.codiecon.models.vo.VehicleDetailsVo;
@@ -23,7 +20,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.codiecon.codiecon.models.Response.BaseResponse;
@@ -31,7 +27,7 @@ import com.codiecon.codiecon.models.entity.DriverDetails;
 import com.codiecon.codiecon.models.entity.VehicleAvailableDates;
 import com.codiecon.codiecon.models.entity.VehicleDetails;
 import com.codiecon.codiecon.models.enums.DLType;
-import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
+import com.codiecon.codiecon.service.BookingService;
 import com.codiecon.codiecon.service.DriverService;
 
 import io.swagger.annotations.Api;
@@ -43,6 +39,9 @@ public class DriverController {
 
   @Autowired
   private DriverService driverService;
+
+  @Autowired
+  private BookingService bookingService;
 
   @RequestMapping(value = "/save", method = RequestMethod.POST, consumes =
       MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -83,6 +82,9 @@ public class DriverController {
     List<VehicleDetails> vehicleDetails = vehicleAvailableDates.stream()
         .map(vehicleAvailableDates1 -> vehicleAvailableDates1.getVehicleDetails())
         .collect(Collectors.toList());
+    vehicleDetails = vehicleDetails.stream().filter(
+        vehicleDetails1 -> !driverService.isNotAvailableForTomorrow(vehicleDetails1.getId(), tommorowStart, tomorrowEnd))
+        .collect(Collectors.toList());
     vehicleDetails = vehicleDetails.stream()
         .filter(vehicleDetails1 -> validate(vehicleDetails1, driverDetails.getDlType()))
         .collect(Collectors.toList());
@@ -90,6 +92,13 @@ public class DriverController {
         vehicleDetails.stream().map(vehicleDetails1 -> toVehicleDetailsVo(vehicleDetails1))
             .collect(Collectors.toList());
     return new VehicleDetailsResponse(true, HttpStatus.OK.value(), vehicleDetailsVos);
+  }
+
+  @RequestMapping(value = "/bookVehicle", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE,
+                  produces = MediaType.APPLICATION_JSON_VALUE)
+  public BaseResponse bookVehicle(@RequestBody BookingRequest request) {
+    boolean status = bookingService.bookVehicle(request);
+    return new BaseResponse(status, HttpStatus.OK.value());
   }
 
   private VehicleDetailsVo toVehicleDetailsVo(VehicleDetails vehicleDetails) {

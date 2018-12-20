@@ -30,7 +30,7 @@ public class PaymentDetails {
   @GenericGenerator(name = "uuid", strategy = "uuid")
   private String id;
 
-  @Column(nullable = false)
+  @Column(nullable = false,unique = true)
   private String email;
 
   @Column(nullable = false)
@@ -41,6 +41,10 @@ public class PaymentDetails {
 
   @Column(nullable = false)
   private String bankName;
+
+  private double amountOwe;
+
+  private double amountDue;
 
   private  boolean markForDelete;
 
