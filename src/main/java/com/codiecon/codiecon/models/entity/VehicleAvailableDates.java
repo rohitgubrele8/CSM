@@ -41,7 +41,7 @@ public class VehicleAvailableDates {
   @Id
   private String id;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = VehicleAvailableDates.VEHICLE_ID, nullable = false)
   private VehicleDetails vehicleDetails;
 
