@@ -43,5 +43,4 @@ public class SignUpController {
 //    return new BaseResponse(true, HttpStatus.OK.value());
 //  }
 
-
 }

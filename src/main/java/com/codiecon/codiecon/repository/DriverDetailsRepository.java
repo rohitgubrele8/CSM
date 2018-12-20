@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DriverDetailsRepository extends JpaRepository<DriverDetails,String> {
 
+  DriverDetails findByEmail(String email);
+
 }

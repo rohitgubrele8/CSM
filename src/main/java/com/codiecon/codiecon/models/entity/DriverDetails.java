@@ -2,13 +2,29 @@ package com.codiecon.codiecon.models.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
+import com.codiecon.codiecon.models.enums.DLType;
+
 @Entity
+
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
+@Builder
 @Table(name = DriverDetails.TABLE_NAME)
 public class DriverDetails {
 
@@ -33,10 +49,13 @@ public class DriverDetails {
   private String dlNumber;
 
   @Column(name = DriverDetails.COLUMN_DL_TYPE, nullable = false)
-  private String dlType;
+  @Enumerated(value = EnumType.STRING)
+  private DLType dlType;
 
   @Column(name = DriverDetails.COLUMN_CONTACT_NUMBER, nullable = false)
   private String contactNumber;
+
+  private String email;
 
   @Column(name = DriverDetails.COLUMN_IS_APPROVED, nullable = false)
   private boolean approved;
@@ -92,6 +111,22 @@ public class DriverDetails {
 
   public void setApproved(boolean approved) {
     this.approved = approved;
+  }
+
+  public DLType getDlType() {
+    return dlType;
+  }
+
+  public void setDlType(DLType dlType) {
+    this.dlType = dlType;
+  }
+
+  public boolean isMarkForDelete() {
+    return markForDelete;
+  }
+
+  public void setMarkForDelete(boolean markForDelete) {
+    this.markForDelete = markForDelete;
   }
 
   @Override
