@@ -45,19 +45,12 @@ public class OwnerDetails {
   @GenericGenerator(name = "uuid", strategy = "uuid")
   private String id;
 
-  @Column(nullable = false)
   private String name;
 
-  @Column(updatable = false, nullable = false, unique = true)
-  private String email;
-
-  @Column(nullable = false, unique = true)
   private String contactNumber;
 
-  @Column(nullable = false)
   private String ownerAddress;
 
-  @Column(nullable = false)
   private String zipCode;
 
   @Enumerated(value = EnumType.STRING)
@@ -85,18 +78,18 @@ public class OwnerDetails {
     if (o == null || getClass() != o.getClass())
       return false;
     OwnerDetails that = (OwnerDetails) o;
-    return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects
-        .equals(email, that.email) && Objects.equals(contactNumber, that.contactNumber) && Objects
+    return markForDelete == that.markForDelete && Objects.equals(id, that.id) && Objects
+        .equals(name, that.name) && Objects.equals(contactNumber, that.contactNumber) && Objects
         .equals(ownerAddress, that.ownerAddress) && Objects.equals(zipCode, that.zipCode)
-        && status == that.status && Objects.equals(paymentDetails, that.paymentDetails) && Objects
+        && status == that.status && Objects.equals(otp, that.otp) && Objects
+        .equals(paymentDetails, that.paymentDetails) && Objects
         .equals(vehicleDetails, that.vehicleDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects
-        .hash(id, name, email, contactNumber, ownerAddress, zipCode, status, paymentDetails,
-            vehicleDetails);
+    return Objects.hash(id, name, contactNumber, ownerAddress, zipCode, status, otp, markForDelete,
+        paymentDetails, vehicleDetails);
   }
 }
 

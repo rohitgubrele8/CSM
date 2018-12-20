@@ -6,6 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OwnerDetailsRepository extends JpaRepository<OwnerDetails,String> {
-
-  OwnerDetails findByEmail(String email);
 }
