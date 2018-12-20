@@ -1,7 +1,7 @@
 package com.codiecon.codiecon.service;
 
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
-import com.codiecon.codiecon.models.request.OwnerOtpRequest;
+
 
 public interface SignUpService {
 
@@ -9,7 +9,7 @@ public interface SignUpService {
 
   public void vehicleOwnerSignUp(OwnerDetailsRequest ownerDetailsRequest);
 
-  public void vehicleOwnerOtpValidation(OwnerOtpRequest ownerOtpRequest);
+//  public void vehicleOwnerOtpValidation(OwnerOtpRequest ownerOtpRequest);
 
   public void bookVehicle();
 

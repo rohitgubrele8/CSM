@@ -31,7 +31,7 @@ public class PaymentDetails {
   private String id;
 
   @Column(nullable = false)
-  private String userId;
+  private String email;
 
   @Column(nullable = false)
   private String bankAccountNumber;
@@ -51,13 +51,13 @@ public class PaymentDetails {
     if (o == null || getClass() != o.getClass())
       return false;
     PaymentDetails that = (PaymentDetails) o;
-    return Objects.equals(id, that.id) && Objects.equals(userId, that.userId) && Objects
+    return Objects.equals(id, that.id) && Objects.equals(email, that.email) && Objects
         .equals(bankAccountNumber, that.bankAccountNumber) && Objects
         .equals(branchName, that.branchName) && Objects.equals(bankName, that.bankName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, userId, bankAccountNumber, branchName, bankName);
+    return Objects.hash(id, email, bankAccountNumber, branchName, bankName);
   }
 }

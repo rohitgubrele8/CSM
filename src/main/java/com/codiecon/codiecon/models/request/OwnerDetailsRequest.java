@@ -37,5 +37,6 @@ public class OwnerDetailsRequest implements Serializable {
   @NotEmpty
   private String zipCode;
 
+  private PaymentDetailsRequest paymentDetailsRequest;
 
 }

@@ -3,7 +3,6 @@ package com.codiecon.codiecon.serviceImpl;
 import com.codiecon.codiecon.models.entity.OwnerDetails;
 import com.codiecon.codiecon.models.enums.ApplicationStatus;
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
-import com.codiecon.codiecon.models.request.OwnerOtpRequest;
 import com.codiecon.codiecon.repository.OwnerDetailsRepository;
 import com.codiecon.codiecon.service.SignUpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +27,7 @@ public class SignUpServiceImpl implements SignUpService {
 
   }
 
+  @Deprecated
   @Override
   public void vehicleOwnerSignUp(OwnerDetailsRequest ownerDetailsRequest) {
     OwnerDetails ownerDetails = new OwnerDetails();
@@ -43,14 +43,14 @@ public class SignUpServiceImpl implements SignUpService {
     //todo :: send otp in email or phone
   }
 
-  @Override
-  public void vehicleOwnerOtpValidation(OwnerOtpRequest ownerOtpRequest){
-    OwnerDetails ownerDetails = ownerDetailsRepository.findByEmail(ownerOtpRequest.getEmail());
-    if(ownerDetails.getOtp().equals(ownerOtpRequest.getOtp())){
-      ownerDetails.setStatus(ApplicationStatus.OTP_VERIFIED);
-    }
-    ownerDetailsRepository.save(ownerDetails);
-  }
+//  @Override
+//  public void vehicleOwnerOtpValidation(OwnerOtpRequest ownerOtpRequest){
+//    OwnerDetails ownerDetails = ownerDetailsRepository.findByEmail(ownerOtpRequest.getEmail());
+//    if(ownerDetails.getOtp().equals(ownerOtpRequest.getOtp())){
+//      ownerDetails.setStatus(ApplicationStatus.OTP_VERIFIED);
+//    }
+//    ownerDetailsRepository.save(ownerDetails);
+//  }
 
   @Override
   public void bookVehicle() {
