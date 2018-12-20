@@ -40,6 +40,8 @@ public class LoginDetails {
   @Enumerated(value = EnumType.STRING)
   private UserRole role;
 
+  private  boolean markForDelete;
+
   public LoginDetails(String id, String password, String userName, UserRole role) {
     this.id = id;
     this.password = password;

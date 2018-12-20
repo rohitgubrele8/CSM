@@ -37,13 +37,13 @@ public class OwnerDetails {
   private static final long serialVersionUID = 1L;
   public static final String OWNER_TABLE = "ownerDetails";
   private static final String OWNER = "owner";
-  public static final String USER_ID = "user_id";
   public static final String VEHICLE_ID = "vehicle_id";
+  public static final String PAYMENT_ID = "payment_id";
 
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid")
-  private Long id;
+  private String id;
 
   @Column(nullable = false)
   private String name;
@@ -66,14 +66,11 @@ public class OwnerDetails {
 
   private Long otp;
 
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = OwnerDetails.USER_ID)
-  private PaymentDetails paymentDetails;
+  private  boolean markForDelete;
 
-  @OneToMany()
-  @JsonManagedReference
-  @JoinColumn(name = VEHICLE_ID, nullable = false)
-  private List<VehicleDetails> vehicleDetails;
+  @OneToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = OwnerDetails.PAYMENT_ID)
+  private PaymentDetails paymentDetails;
 
 
   @Override
@@ -86,15 +83,13 @@ public class OwnerDetails {
     return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects
         .equals(email, that.email) && Objects.equals(contactNumber, that.contactNumber) && Objects
         .equals(ownerAddress, that.ownerAddress) && Objects.equals(zipCode, that.zipCode)
-        && status == that.status && Objects.equals(paymentDetails, that.paymentDetails) && Objects
-        .equals(vehicleDetails, that.vehicleDetails);
+        && status == that.status && Objects.equals(paymentDetails, that.paymentDetails) ;
   }
 
   @Override
   public int hashCode() {
     return Objects
-        .hash(id, name, email, contactNumber, ownerAddress, zipCode, status, paymentDetails,
-            vehicleDetails);
+        .hash(id, name, email, contactNumber, ownerAddress, zipCode, status, paymentDetails);
   }
 }
 

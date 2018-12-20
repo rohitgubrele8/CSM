@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -39,8 +40,6 @@ public class SignUpServiceImpl implements SignUpService {
         .nextInt(MIN_OTP_RANGE, MAX_OTP_RANGE + 1)));
     ownerDetails.setStatus(ApplicationStatus.OTP_PENDING);
     ownerDetailsRepository.save(ownerDetails);
-
-
     //todo :: send otp in email or phone
   }
 

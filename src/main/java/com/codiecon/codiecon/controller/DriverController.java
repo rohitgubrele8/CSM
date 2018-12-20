@@ -22,6 +22,7 @@ import com.codiecon.codiecon.models.Response.BaseResponse;
 import com.codiecon.codiecon.models.entity.DriverDetails;
 import com.codiecon.codiecon.models.entity.VehicleAvailableDates;
 import com.codiecon.codiecon.models.entity.VehicleDetails;
+import com.codiecon.codiecon.models.enums.DLType;
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
 import com.codiecon.codiecon.service.DriverService;
 
@@ -48,7 +49,34 @@ public class DriverController {
     List<VehicleDetails> vehicleDetails =
         vehicleAvailableDates.stream().map(vehicleAvailableDates1 -> vehicleAvailableDates1.getVehicleDetails())
             .collect(Collectors.toList());
-    vehicleDetails = vehicleDetails.stream().filter(vehicleDetails1 -> vehicleDetails1.getVehicleType().)
+    vehicleDetails =
+        vehicleDetails.stream().filter(vehicleDetails1 -> validate(vehicleDetails1, driverDetails.getDlType()))
+            .collect(Collectors.toList());
     return vehicleDetails;
+  }
+
+  private boolean validate(VehicleDetails vehicleDetails , DLType dlType) {
+    switch (dlType) {
+      case CAR:
+        return DLType.CAR.equals(vehicleDetails.getVehicleType());
+      case BIKE:
+        return DLType.BIKE.equals(vehicleDetails.getVehicleType());
+      case TRUCK:
+        return DLType.TRUCK.equals(vehicleDetails.getVehicleType());
+      case BIKEANDCAR:
+        return (DLType.CAR.equals(vehicleDetails.getVehicleType()) || DLType.BIKE
+            .equals(vehicleDetails.getVehicleType()));
+      case CARANDTRUCK:
+        return (DLType.CAR.equals(vehicleDetails.getVehicleType()) || DLType.TRUCK
+            .equals(vehicleDetails.getVehicleType()));
+      case BIKEANDTRUCK:
+        return (DLType.TRUCK.equals(vehicleDetails.getVehicleType()) || DLType.BIKE
+            .equals(vehicleDetails.getVehicleType()));
+      case BIKEANDCARANDTRUCK:
+        return (DLType.CAR.equals(vehicleDetails.getVehicleType()) || DLType.BIKE
+            .equals(vehicleDetails.getVehicleType())) || DLType.TRUCK.equals(vehicleDetails.getVehicleType());
+      default:
+          return false;
+    }
   }
 }

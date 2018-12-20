@@ -28,7 +28,7 @@ public class PaymentDetails {
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid")
-  private Long id;
+  private String id;
 
   @Column(nullable = false)
   private String userId;
@@ -41,6 +41,8 @@ public class PaymentDetails {
 
   @Column(nullable = false)
   private String bankName;
+
+  private  boolean markForDelete;
 
   @Override
   public boolean equals(Object o) {
