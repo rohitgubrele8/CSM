@@ -51,6 +51,8 @@ public class OwnerDetails {
 
   private String ownerAddress;
 
+  private String email;
+
   private String zipCode;
 
   @Enumerated(value = EnumType.STRING)
@@ -59,16 +61,11 @@ public class OwnerDetails {
 
   private Long otp;
 
-  private  boolean markForDelete;
+  private boolean markForDelete;
 
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = OwnerDetails.PAYMENT_ID)
   private PaymentDetails paymentDetails;
-
-  @OneToMany()
-  @JsonManagedReference
-  @JoinColumn(name = VEHICLE_ID, nullable = false)
-  private List<VehicleDetails> vehicleDetails;
 
 
   @Override
@@ -78,18 +75,15 @@ public class OwnerDetails {
     if (o == null || getClass() != o.getClass())
       return false;
     OwnerDetails that = (OwnerDetails) o;
-    return markForDelete == that.markForDelete && Objects.equals(id, that.id) && Objects
-        .equals(name, that.name) && Objects.equals(contactNumber, that.contactNumber) && Objects
+    return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects
+        .equals(contactNumber, that.contactNumber) && Objects
         .equals(ownerAddress, that.ownerAddress) && Objects.equals(zipCode, that.zipCode)
-        && status == that.status && Objects.equals(otp, that.otp) && Objects
-        .equals(paymentDetails, that.paymentDetails) && Objects
-        .equals(vehicleDetails, that.vehicleDetails);
+        && status == that.status && Objects.equals(paymentDetails, that.paymentDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, contactNumber, ownerAddress, zipCode, status, otp, markForDelete,
-        paymentDetails, vehicleDetails);
+    return Objects.hash(id, name, contactNumber, ownerAddress, zipCode, status, paymentDetails);
   }
 }
 

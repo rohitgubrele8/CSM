@@ -1,5 +1,6 @@
 package com.codiecon.codiecon.models.request;
 
+import com.codiecon.codiecon.models.enums.VehicleType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +11,6 @@ import lombok.ToString;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 
 
 @Getter
@@ -19,24 +19,22 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OwnerDetailsRequest implements Serializable {
+public class VehicleDetailsRequest {
 
   @NotEmpty
-  private String name;
+  private String vehicleNumber;
+
+
+  private VehicleType vehicleType;
 
   @NotEmpty
+  private String vehicleModel;
+
   @Email
-  private String email;
+  private String ownerEmail;
 
   @NotEmpty
-  private String contactNumber;
+  private String insuranceNumber;
 
-  @NotEmpty
-  private String ownerAddress;
-
-  @NotEmpty
-  private String zipCode;
-
-  private PaymentDetailsRequest paymentDetailsRequest;
 
 }

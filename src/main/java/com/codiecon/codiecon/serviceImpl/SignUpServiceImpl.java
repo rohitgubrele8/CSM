@@ -4,7 +4,6 @@ import com.codiecon.codiecon.models.Response.LoginResponse;
 import com.codiecon.codiecon.models.entity.LoginDetails;
 import com.codiecon.codiecon.models.request.LoginRequest;
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
-import com.codiecon.codiecon.models.request.OwnerOtpRequest;
 import com.codiecon.codiecon.models.request.SignUpRequest;
 import com.codiecon.codiecon.repository.DriverDetailsRepository;
 import com.codiecon.codiecon.repository.LoginDetailsRepository;
@@ -49,42 +48,6 @@ public class SignUpServiceImpl implements SignUpService {
     }
   }
 
-  @Override
-  public void vehicleOwnerSignUp(OwnerDetailsRequest ownerDetailsRequest) {
-
-  }
-
-
-  @Override
-  public void vehicleOwnerOtpValidation(OwnerOtpRequest ownerOtpRequest) {
-
-  }
-
-
-  @Override
-  public void bookVehicle() {
-
-  }
-
-  @Override
-  public void updateVehicleAvailability() {
-
-  }
-
-  @Override
-  public void cancelBooking() {
-
-  }
-
-  @Override
-  public void uploadVehicleDocuments() {
-
-  }
-
-  @Override
-  public void uploadDriverDocuments() {
-
-  }
 
   @Override
   public LoginResponse login(LoginRequest loginRequest) {
