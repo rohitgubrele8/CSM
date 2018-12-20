@@ -4,6 +4,9 @@ package com.codiecon.codiecon.controller;
 import com.codiecon.codiecon.models.Response.BaseResponse;
 import com.codiecon.codiecon.models.entity.LoginDetails;
 import com.codiecon.codiecon.models.request.OwnerDetailsRequest;
+import com.codiecon.codiecon.models.Response.LoginResponse;
+import com.codiecon.codiecon.models.request.LoginRequest;
+import com.codiecon.codiecon.models.request.SignUpRequest;
 import com.codiecon.codiecon.service.SignUpService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin("*")
