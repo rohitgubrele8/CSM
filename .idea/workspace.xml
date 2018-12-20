@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b93ea432-e19b-4fa7-af29-d6a0c247f012" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/controller/OtpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/Response/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/Response/OtpResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/Otp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/request/OtpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/request/SignUpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/service/OtpService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/OtpServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codiecon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/codiecon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/controller/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/LoginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/LoginDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/OwnerDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/OwnerDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/repository/LoginDetailsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/repository/LoginDetailsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/repository/OwnerDetailsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/repository/OwnerDetailsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/service/SignUpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/service/SignUpService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/controller/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/controller/SignUpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/Model.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/DriverDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/DriverDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/LoginDetails$UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/LoginDetails$UserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/LoginDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/LoginDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/OwnerDetails$OwnerDetailsBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/OwnerDetails$OwnerDetailsBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/OwnerDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/OwnerDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/entity/UserLogin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/request/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/models/request/LoginRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/repository/LoginDetailsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/repository/LoginDetailsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/repository/OwnerDetailsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/repository/OwnerDetailsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/repository/VehicleDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/service/SignUpService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/service/SignUpService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/serviceImpl/OtpServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/serviceImpl/OtpServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,38 +15,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-603">
-              <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/OtpServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="99" column="39" lean-forward="true" selection-start-line="99" selection-start-column="39" selection-end-line="99" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2716#2913#0" expanded="true" />
-                <element signature="e#2912#2913#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="233">
+              <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,76 +29,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/RuntimeException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/repository/LoginDetailsRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/service/SignUpService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="-339">
+              <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+                <element signature="e#1198#1199#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/Otp.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/controller/SignUpController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/controller/OtpController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/request/OtpRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/service/OtpService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="298">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
         </entry>
@@ -215,7 +101,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/request/SignUpRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/Response/OtpResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/OwnerDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/repository/OwnerDetailsRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/LoginDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/repository/LoginDetailsRepository.java" />
@@ -224,6 +109,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/entity/DriverDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/OtpServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -245,6 +131,11 @@
             <path>
               <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSM" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
@@ -280,82 +171,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="codiecon" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSM" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSM" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSM" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSM" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="request" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSM" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="Response" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSM" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSM" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codiecon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSM" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="codiecon" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceImpl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -428,12 +243,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16617000" />
+    <option name="totallyTimeSpent" value="17013000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -494,13 +310,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java</url>
-          <line>40</line>
+          <line>41</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java</url>
-          <line>44</line>
+          <line>45</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -551,6 +367,12 @@
           <line>107</line>
           <properties />
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/service/OtpService.java</url>
@@ -789,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/controller/SignUpController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+        <state relative-caret-position="298">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -885,16 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-603">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/models/request/OtpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -947,6 +759,27 @@
             <element signature="imports" expanded="true" />
             <element signature="e#2716#2913#0" expanded="true" />
             <element signature="e#2912#2913#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/RuntimeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-339">
+          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+          <folding>
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codiecon/codiecon/serviceImpl/SignUpServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

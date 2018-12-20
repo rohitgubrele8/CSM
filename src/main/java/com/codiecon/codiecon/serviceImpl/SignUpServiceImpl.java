@@ -37,12 +37,16 @@ public class SignUpServiceImpl implements SignUpService {
   @Override
   public void signUp(SignUpRequest signUpRequest) {
 
-    LoginDetails loginDetails = new LoginDetails();
-    loginDetails.setEmail(signUpRequest.getEmail());
-    loginDetails.setPassword(signUpRequest.getPassword());
-    loginDetails.setRole(signUpRequest.getRole());
-    loginDetails.setName(signUpRequest.getName());
-    loginDetailsRepository.save(loginDetails);
+    try {
+      LoginDetails loginDetails = new LoginDetails();
+      loginDetails.setEmail(signUpRequest.getEmail());
+      loginDetails.setPassword(signUpRequest.getPassword());
+      loginDetails.setRole(signUpRequest.getRole());
+      loginDetails.setName(signUpRequest.getName());
+      loginDetailsRepository.save(loginDetails);
+    } catch (Exception e) {
+      throw new RuntimeException("Duplicate email");
+    }
   }
 
   @Override
